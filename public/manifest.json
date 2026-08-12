@@ -1,0 +1,22 @@
+{
+  "name": "SugarSnap AI",
+  "short_name": "SugarSnap",
+  "description": "Snap it. Know your sugar. India-first AI nutrition tracker.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF7",
+  "theme_color": "#14B87A",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
