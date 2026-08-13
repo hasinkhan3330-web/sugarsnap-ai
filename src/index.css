@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  -webkit-font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  :root {
+    --background: 60 9% 98%;
+    --foreground: 210 14% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 14% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 14% 12%;
+    --primary: 158 80% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 5% 94%;
+    --secondary-foreground: 210 14% 12%;
+    --muted: 60 5% 94%;
+    --muted-foreground: 210 8% 46%;
+    --accent: 158 80% 95%;
+    --accent-foreground: 210 14% 12%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 60 5% 90%;
+    --input: 60 5% 90%;
+    --ring: 158 80% 40%;
+    --chart-1: 0 75% 55%;
+    --chart-2: 158 80% 40%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 210 80% 50%;
+    --chart-5: 280 65% 60%;
+    --radius: 1.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply mx-auto w-full max-w-md px-4 pb-28 pt-6;
+  }
+  .page-container-wide {
+    @apply mx-auto w-full max-w-2xl px-4 pb-28 pt-6;
+  }
+  .sugar-ring-track {
+    stroke: #FFE0E0;
+  }
+}
+
+/* Hide scrollbar for horizontal scroll areas */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area padding for mobile */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
