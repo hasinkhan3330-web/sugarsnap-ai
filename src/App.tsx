@@ -4,9 +4,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AuthProvider } from '@/hooks/use-auth';
 import { PublicLayout } from '@/components/PublicLayout';
 import { ProtectedLayout } from '@/components/ProtectedLayout';
-import { LandingPage } from '@/pages/Landing';
 import { Skeleton } from '@/components/ui/skeleton';
 
+const LandingPage = lazy(() => import('@/pages/Landing').then(m => ({ default: m.LandingPage })));
 const LoginPage = lazy(() => import('@/pages/Login').then(m => ({ default: m.LoginPage })));
 const OnboardingPage = lazy(() => import('@/pages/Onboarding').then(m => ({ default: m.OnboardingPage })));
 const TodayPage = lazy(() => import('@/pages/Today').then(m => ({ default: m.TodayPage })));
@@ -41,7 +41,7 @@ export default function App() {
           <Routes>
             {/* Public routes */}
             <Route element={<PublicLayout />}>
-              <Route path="/" element={<LandingPage />} />
+              <Route path="/" element={<Suspense fallback={<PageLoader />}><LandingPage /></Suspense>} />
               <Route path="/login" element={<Suspense fallback={<PageLoader />}><LoginPage /></Suspense>} />
             </Route>
 

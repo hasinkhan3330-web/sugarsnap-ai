@@ -10,7 +10,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    include: ['react', 'react-dom', 'react-router-dom', 'lucide-react', '@supabase/supabase-js', '@tanstack/react-query', 'recharts', 'react-hook-form', 'zod', '@hookform/resolvers', 'date-fns', 'class-variance-authority', 'clsx', 'tailwind-merge'],
   },
   build: {
     chunkSizeWarningLimit: 600,
